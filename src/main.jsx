@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import { Home, About, Layout } from './components'
+import { Home, About, Layout, Contact, Users, Github} from './components'
 
 // 1st way to specify which route is for which element
 // const router = createBrowserRouter([
@@ -19,8 +19,9 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout/>}>
       <Route path='' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
-      {/* <Route path='/contact' element={<Contact/>}/> */}
-      {/* <Route path='/github' element={<Github/>}/> */}
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/user/:userId' element={<Users/>}/>
+      <Route path='/github' element={<Github/>}/>
     </Route>
   )
 )
